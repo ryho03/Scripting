@@ -43,3 +43,4 @@ jobs:
      - run: echo "Hello World"
      - run: echo "Hello $name" # name is the env var name, we access it with $var      
      - run: echo $app_name >> New_File
+     - run: echo "${{secrets.GIT_DEMO_SECRET}}"
