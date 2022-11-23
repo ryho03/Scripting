@@ -1,3 +1,5 @@
+git config --global user.email rhoney95@gmail.com
+git config --global user.name ryho03
 touch new_filescript.txt
 echo "Hello, hope this works" >> new_filescript.txt
 git add new_filescript.txt
