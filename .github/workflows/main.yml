@@ -2,14 +2,14 @@
 name: Git Actions Demo
 # The workflow / CI Server runs / triggers when there is a push to the repo
 on: [push]
+env:
+  app_name: c00l_maths_games.exe
 # What jobs do we want as part of our workflow
 jobs:
-  env:
-    app_name: c00l_maths_games.exe
     actions_demo:
      runs-on: ubuntu-latest  # Creating a container (virtual machine) that uses ubuntu
     # What do we want this machine to do?
-      steps:
+     steps:
        - run: echo "Hello World!"
        - run: touch New_File
        - run: echo "I hope this works" > New_File
@@ -20,7 +20,7 @@ jobs:
        - run: git clone https://github.com/ryho03/Scripting
        - run: cat Scripting/README.md
 
-   better_action:
+    better_action:
       runs-on: ubuntu-latest
       steps:
       - uses: actions/checkout@v3 # Checking out and using the repo assigned to this workflow
@@ -35,11 +35,11 @@ jobs:
 # Local - Only usable in the job / step you have specified
 # Secret - confidential or private variables
 
-  env_vars_job:
-   runs-on: ubuntu-latest
-   env:
-    name: Toni  
-   steps:
-    - run: echo "Hello World"
-    - run: echo "Hello $name" # name is the env var name, we access it with $var
-    - run: echo $app_name
+    env_vars_job:
+     runs-on: ubuntu-latest
+     env:
+      name: Toni  
+     steps:
+     - run: echo "Hello World"
+     - run: echo "Hello $name" # name is the env var name, we access it with $var      
+     - run: echo $app_name >> New_File
